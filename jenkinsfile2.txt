@@ -27,7 +27,7 @@ pipeline{
 
 	       not {
 
-	           branch "master"
+	           '5 > 6'
 	       }
 	     }
 
