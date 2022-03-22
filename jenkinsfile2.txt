@@ -1,0 +1,69 @@
+pipeline{
+	
+	agent any
+
+	stages{
+
+	  stage('one') {
+
+	       steps {
+
+	        echo " Hi this is santosh"
+	        }
+	  }
+
+	  stage('two') {
+
+	     steps{
+
+	     input('do you want to proceed?')
+
+	     }
+	  }
+
+	  stage('three') {
+
+	     when{
+
+	       not {
+
+	           branch "master"
+	       }
+	     }
+
+	     steps {
+
+	        echo " Hello World"
+	     }
+	  }
+
+	  stage('four'){
+
+	      Parallel {
+
+	         stage('unit test') {
+
+	                 steps {
+
+	                   echo " This is unit testing"
+
+	                   }
+                  }
+
+             stage('integration test') {
+
+                    steps{
+
+                        echo " This is integration testing"
+                      }
+                   }
+             }
+
+
+	      }
+	  }
+
+
+
+	}
+}
