@@ -25,7 +25,7 @@ pipeline{
 
 	     when{
 
-	       equals(actual: currentBuild.number, expected: 6)
+	       branch "master"
 	     }
 
 	     steps {
