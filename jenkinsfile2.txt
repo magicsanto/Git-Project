@@ -39,7 +39,7 @@ pipeline{
 
 	  stage('four') {
 
-	      Parallel {
+	      parallel {
 
 	         stage('unit test') {
 
@@ -52,7 +52,7 @@ pipeline{
 
              stage('integration test') {
 
-                      steps{
+                      steps {
 
                         echo " This is integration testing"
                       }
