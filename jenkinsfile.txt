@@ -28,12 +28,12 @@ pipeline {
 
 	         not {
 
-	              branch 'master'
+	              branch "master"
 	         }
 
 	         steps {
 
-	            echo 'Hello'
+	            echo "Hello"
 	         }
 
 	       }
@@ -47,7 +47,7 @@ pipeline {
 
 	           steps {
 
-	                echo 'This is an unit test'
+	                echo "This is an unit test"
 	           }
 	         }
 
@@ -59,11 +59,11 @@ pipeline {
 
 	                         reuseNode True
 
-	                         image 'ubuntu'
+	                         image "ubuntu"
 	                   }
 	                steps {
 
-	                  echo ' This is an integrity test'
+	                  echo  "This is an integrity test"
 	                }
 	              }
 
