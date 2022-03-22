@@ -22,53 +22,7 @@ pipeline {
 	    }
 	 }
 
-	 stage('three') {
-
-	       when {
-
-	         not {
-
-	              branch "master"
-	         }
-
-	         steps {
-
-	            echo "Hello"
-	         }
-
-	       }
-	 }
-
-	 stage('four') {
-
-	     Parallel {
-
-	         stage('unit test') {
-
-	           steps {
-
-	                echo "This is an unit test"
-	           }
-	         }
-
-	         stage('integrity test'){
-
-	              agent {
-
-	                   docker {
-
-	                         reuseNode True
-
-	                         image "ubuntu"
-	                   }
-	                steps {
-
-	                  echo  "This is an integrity test"
-	                }
-	              }
-
-	         }
-	     }
+	 
 
 
 
